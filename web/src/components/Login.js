@@ -6,6 +6,9 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+//Internal packages
+import CreateAccountModal from './CreateAccountModal';
+
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -16,12 +19,14 @@ class Login extends Component {
         console.log("aff")
     }
 
-    render() {
+    createAccount = () => {
+        window.location.href= "./create_account";
+    }
 
+    render() {
         var textFieldStyle={
             margin:"auto"
         }
-
 
         return (
             <MuiThemeProvider>
@@ -44,6 +49,10 @@ class Login extends Component {
                         label="Login"
                         primary={true}
                         onClick={this.submitLogin}
+                    />
+                    <RaisedButton 
+                        label="Create Account"
+                        onClick={this.createAccount}
                     />
                     </Col>
                     <Col xs md lg />
